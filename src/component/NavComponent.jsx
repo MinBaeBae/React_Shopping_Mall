@@ -8,7 +8,7 @@ export const NavComponent = () => {
 		<>
 			<Navbar fixed="top" bg="light" variant="light">
 				<Container>
-					<Navbar.Brand href="#home">
+					<Navbar.Brand href="/">
 						<img
 							src={process.env.PUBLIC_URL + '/Logo.jpg'}
 							width="40"
@@ -28,10 +28,10 @@ export const NavComponent = () => {
 						</Nav.Link>
 						<Nav.Link
 							onClick={() => {
-								navigate('/Detail')
+								navigate('/About')
 							}}
 						>
-							Detail
+							About
 						</Nav.Link>
 					</Nav>
 				</Container>
