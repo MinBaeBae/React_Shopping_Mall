@@ -2,7 +2,7 @@ import React from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
-export const NavComponent = () => {
+const NavComponent = () => {
 	let navigate = useNavigate()
 	return (
 		<>
@@ -39,3 +39,4 @@ export const NavComponent = () => {
 		</>
 	)
 }
+export default NavComponent

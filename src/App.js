@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Routes, Route } from 'react-router-dom'
-import { NavComponent } from './component/NavComponent'
+import { NavComponent } from './component'
 import { Main, Detail, Error, About } from './pages'
 import data from './data'
 import { useState } from 'react'

@@ -1,21 +1,21 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function Item(props, i) {
+function Item({ shoes }, i) {
 	let navigate = useNavigate()
 	return (
 		<div className="col-md-4">
 			<img
-				src={process.env.PUBLIC_URL + './shoes' + props.id + '.jpg'}
+				src={`https://codingapple1.github.io/shop/shoes${shoes.id + 1}.jpg`}
 				width="80%"
 				style={{ cursor: 'pointer' }}
-				alt="shoe[i]"
+				alt={'Some Kinda Shoes'}
 				onClick={(i) => {
-					navigate(`/Detail/${props.id - 1}`)
+					navigate(`/Detail/${shoes.id}`)
 				}}
 			/>
-			<h4>{props.shoes.title}</h4>
-			<p>{props.shoes.price}원</p>
+			<h4>{shoes.title}</h4>
+			<p>{shoes.price}원</p>
 		</div>
 	)
 }
