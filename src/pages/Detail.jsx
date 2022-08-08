@@ -2,11 +2,14 @@ import { React, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Nav } from 'react-bootstrap'
 import { TabContent } from '../component'
+import { addItem } from './../store/cartSlice'
+import { useDispatch } from 'react-redux'
 
 const Detail = (props) => {
 	let { id } = useParams()
 	let newShoes = props.shoes.find((x) => x.id == id)
 	let [tab, setTab] = useState(0)
+	let dispatch = useDispatch()
 
 	return (
 		<>
@@ -25,7 +28,20 @@ const Detail = (props) => {
 						<h4 className="pt-5">{newShoes.title}</h4>
 						<p>{newShoes.content}</p>
 						<p>{newShoes.price}</p>
-						<button className="btn btn-danger">주문하기</button>
+						<button
+							className="btn btn-danger"
+							onClick={() => {
+								dispatch(
+									addItem({
+										id: `${newShoes.id}`,
+										name: `${newShoes.title}`,
+										count: 1,
+									})
+								)
+							}}
+						>
+							주문하기
+						</button>
 					</div>
 				</div>
 				<Nav variant="tabs" defaultActiveKey="link0">

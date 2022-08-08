@@ -21,17 +21,17 @@ const NavComponent = () => {
 					<Nav className="me-auto">
 						<Nav.Link
 							onClick={() => {
-								navigate('/')
-							}}
-						>
-							Home
-						</Nav.Link>
-						<Nav.Link
-							onClick={() => {
 								navigate('/About')
 							}}
 						>
 							About
+						</Nav.Link>
+						<Nav.Link
+							onClick={() => {
+								navigate('/Cart')
+							}}
+						>
+							Cart
 						</Nav.Link>
 					</Nav>
 				</Container>
