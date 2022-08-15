@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Nav } from 'react-bootstrap'
 import { TabContent } from '../component'
@@ -10,6 +10,20 @@ const Detail = (props) => {
 	let newShoes = props.shoes.find((x) => x.id == id)
 	let [tab, setTab] = useState(0)
 	let dispatch = useDispatch()
+
+	useEffect(() => {
+		let saveItem = localStorage.getItem('recentItem')
+		if (saveItem == null) {
+			saveItem = []
+		} else {
+			saveItem = JSON.parse(saveItem)
+		}
+
+		saveItem.push(newShoes.id)
+		saveItem = new Set(saveItem)
+		saveItem = Array.from(saveItem)
+		localStorage.setItem('recentItem', JSON.stringify(saveItem))
+	})
 
 	return (
 		<>
